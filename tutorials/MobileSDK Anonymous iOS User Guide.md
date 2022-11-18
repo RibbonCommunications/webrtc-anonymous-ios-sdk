@@ -5,14 +5,14 @@ Revision Date: **November 08, 2022**
 
 ## Anonymous Call Mobile SDK overview
 
-The SPiDR/Kandy Link Anonymous Call Mobile Software Development Kit (SDK) defines a library implementation supporting SPiDR/Kandy Link platform features like anonymous call management (allowing unregistered users to place voice or video calls) and WebRTC on iOS. You can use this library implementation to integrate SPiDR/Kandy Link services and WebRTC into your native mobile applications to create new, innovative user experiences.
+The Ribbon WebRTC Anonymous Call Mobile Software Development Kit (SDK) defines a library implementation supporting Ribbon WebRTC Gateway platform features like anonymous call management (allowing unregistered users to place voice or video calls) and WebRTC on iOS. You can use this library implementation to integrate Ribbon WebRTC Gateway services and WebRTC into your native mobile applications to create new, innovative user experiences.
 
 The Anonymous Call Mobile SDK has the following characteristics:
 
-* supports REST over HTTP/HTTPS for integration with the presentation layer of SPiDR/Kandy Link
+* supports REST over HTTP/HTTPS for integration with the presentation layer of Ribbon WebRTC Gateway
 * supports WebSocket for notification
-* classes contain a prefix "SM" ("SPiDR Mobile") to prevent conflicts with developer classes
-* access to REST APIs provided by Ribbon's Kandy platform
+* classes contain a prefix "SM" to prevent conflicts with developer classes
+* access to REST APIs provided by Ribbon's WebRTC Gateway platform
 
 See [Appendix A: High-level Anonymous Call Mobile SDK structure](#appendix-a-high-level-anonymous-call-mobile-sdk-structure) for a high-level view of the Anonymous Call Mobile SDK and its sub-modules.
 
@@ -30,7 +30,7 @@ This document provides help getting started developing your mobile application u
 The following items need to be complete prior to beginning work on your application:
 
 * Your Xcode development environment is set up and ready for new projects.
-* You know the IP address and port of the SPiDR/Kandy Link server.
+* You know the IP address and port of the Ribbon WebRTC Gateway server.
 
 <div class="page-break" />
 
@@ -77,19 +77,19 @@ end
 
 2. Go to project folder via command line and run "pod install" command and wait for cocoapods to finish installation of MobileSDK ,WebRTC frameworks and their dependencies
 
-If you have a trouble with getting latest version of **Kandy Link Anonymous iOS SDK** plaese run these suggested commands [here](https://gist.github.com/mbinna/4202236) in project directory where Podfile is located.
+If you have a trouble with getting latest version of **Ribbon WebRTC Anonymous iOS SDK** plaese run these suggested commands [here](https://gist.github.com/mbinna/4202236) in project directory where Podfile is located.
 
 #### Swift Package Manager Installation
 1. File >Add Package Dependency
 2. ![alt text](images/get_started_6.png "")
-3. Add https://github.com/Kandy-IO/kandy-anonymous-ios-sdk.git
+3. Add https://github.com/RibbonCommunications/webrtc-anonymous-ios-sdk.git
 4. ![alt text](images/get_started_7.png "")
 5. Select "Branch" with "master"
 
 #### Manual Installation
-**IMPORTANT:** This installation section applies to **Kandy Link Anonymous iOS SDK** versions prior to v5.17.0. If you are using a more recent version, follow the instructions [here](?id=manual-installation-after-v5170).
+**IMPORTANT:** This installation section applies to **Ribbon WebRTC Anonymous iOS SDK** versions prior to v5.17.0. If you are using a more recent version, follow the instructions [here](?id=manual-installation-after-v5170).
 
-Before those steps you need to download **Kandy Link Anonymous iOS SDK** framework file from [this link](https://raw.githubusercontent.com/Kandy-IO/kandy-anonymous-ios-sdk/$SDK_VERSION$/dist/MobileSDKAnonymous_$SDK_VERSION$.zip).
+Before those steps you need to download **Ribbon WebRTC Anonymous iOS SDK** framework file from [this link](https://raw.githubusercontent.com/RibbonCommunications/webrtc-anonymous-ios-sdk/$SDK_VERSION$/dist/MobileSDKAnonymous_$SDK_VERSION$.zip).
 
 1. Navigate to Build Phases and scroll down to Link binary with libraries.
 2. Add MobileSDKAnonymous.framework under Link binary with libraries.
@@ -116,9 +116,9 @@ Before those steps you need to download **Kandy Link Anonymous iOS SDK** framewo
 ![alt text](images/get_started_4.png "")
 
 #### Manual Installation (After v5.17.0)
-Support for XCFramework has been added to **Kandy Link Anonymous iOS SDK** with the v5.17.0 release. You can install **Kandy Link iOS SDK** as XCFramework by following the steps below. (More information about XCFramework, see [link](https://help.apple.com/xcode/mac/11.4/#/dev6f6ac218b)).
+Support for XCFramework has been added to **Ribbon WebRTC Anonymous iOS SDK** with the v5.17.0 release. You can install **Ribbon WebRTC Anonymous iOS SDK** as XCFramework by following the steps below. (More information about XCFramework, see [link](https://help.apple.com/xcode/mac/11.4/#/dev6f6ac218b)).
 
-First of all, you must have the **Kandy Link Anonymous iOS SDK** XCFramework file for installation. You can download from [this link](https://raw.githubusercontent.com/Kandy-IO/kandy-anonymous-ios-sdk/$SDK_VERSION$/dist/MobileSDKAnonymous_$SDK_VERSION$.zip).
+First of all, you must have the **Ribbon WebRTC Anonymous iOS SDK** XCFramework file for installation. You can download from [this link](https://raw.githubusercontent.com/RibbonCommunications/webrtc-anonymous-ios-sdk/$SDK_VERSION$/dist/MobileSDKAnonymous_$SDK_VERSION$.zip).
 
 1. Go to project settings and navigate to **General**.
 2. Add **MobileSDKAnonymous.xcframework** and **WebRTC.xcframework** under **Framework, Libraries, and Embedded Content** section.
@@ -192,9 +192,9 @@ To see all available configurations, see [Appendix D: Detailed Configurations](#
    //configuration.X = --> setter
 
    //set minimum Configuration values
-   //server IP value for SPiDR/Kandy Link
+   //server IP value for Ribbon WebRTC Gateway
    configuration.restServerIP = @"$SUBSCRIPTIONFQDN$";
-   //server port value for SPiDR/Kandy Link
+   //server port value for Ribbon WebRTC Gateway
    configuration.restServerPort = @"443";
    //logger implementation defined by application
    configuration.logger = self;
@@ -229,9 +229,9 @@ func manageConfiguration() {
     //configuration.X = --> setter
 
     //set minimum Configuration values
-    //server IP value for SPiDR/Kandy Link
+    //server IP value for Ribbon WebRTC Gateway
     configuration.restServerIP = "$SUBSCRIPTIONFQDN$"
-    //server port value for SPiDR/Kandy Link
+    //server port value for Ribbon WebRTC Gateway
     configuration.restServerPort = "443"
     //logger implementation defined by application
     configuration.logger = self
@@ -445,15 +445,15 @@ class CallController: NSObject, SMCallApplicationDelegate {
 
 ### Add STUN/TURN servers
 
-SPiDR/Kandy Link provides TURN server support for media relay between two WebRTC endpoints in core version 3.0 and later. The ICEServers property in the SMConfiguration class is used to store the ICE servers list; more than one ICEServer can exist in this property.
+Ribbon WebRTC Gateway provides TURN server support for media relay between two WebRTC endpoints in core version 3.0 and later. The ICEServers property in the SMConfiguration class is used to store the ICE servers list; more than one ICEServer can exist in this property.
 
-#### Add SPiDR's (Kandy Link) TURN server
+#### Add Ribbon WebRTC Gateway TURN server
 
-After registration, the Mobile SDK gets default credentials from SPiDR/Kandy Link for the TURN servers and updates the defaultICEUsername and defaultICEPassword configuration properties. The list of ICEServers and their credentials are added to the PeerConnection when creating a call.
+After registration, the Mobile SDK gets default credentials from Ribbon WebRTC Gateway for the TURN servers and updates the defaultICEUsername and defaultICEPassword configuration properties. The list of ICEServers and their credentials are added to the PeerConnection when creating a call.
 
-The following code sample will request TURN server credentials from SPiDR/Kandy Link and update the configuration instance.
+The following code sample will request TURN server credentials from Ribbon WebRTC Gateway and update the configuration instance.
 
-**Note:** If your SPiDR/Kandy Link core version does not have TURN Server support, adding a TURN server without a username and password will cause the registration request to fail.
+**Note:** If your Ribbon WebRTC Gateway core version does not have TURN Server support, adding a TURN server without a username and password will cause the registration request to fail.
 
 ###### Example: Adding STUN/TURN server
 
@@ -484,7 +484,7 @@ SMConfiguration.getInstance().iceServers = servers
 
 #### Add an external TURN/STUN server
 
-You also have the option of using external TURN/STUN servers while establishing calls rather than SPiDR's (Kandy Link) TURN server(s). The ICEServers property will store the address and username/password for the server(s).
+You also have the option of using external TURN/STUN servers while establishing calls rather than Ribbon WebRTC Gateway TURN server(s). The ICEServers property will store the address and username/password for the server(s).
 
 Use the addICEServer:username:password: method of the ICEServers object to define credentials.
 
@@ -678,9 +678,9 @@ func establishCallFailed(_ call: SMOutgoingCallDelegate, withError error: SMMobi
 
 ### Make a time-limited token based anonymous call
 
-Use the Time-Limited Token Based Anonymous Call functionality to place audio only or audio/video calls anonymously (without logging in with a username and password). A pre-shared (provisioned) key is used to obfuscate the time in the token - once handed out, SPiDR/KL will only allow the token to be used to access/subscribe to the services for a limited time (i.e. within 10 minutes of UTC time in token). This helps anonymous call functionality to be more secure.
+Use the Time-Limited Token Based Anonymous Call functionality to place audio only or audio/video calls anonymously (without logging in with a username and password). A pre-shared (provisioned) key is used to obfuscate the time in the token - once handed out, Ribbon WebRTC Gateway will only allow the token to be used to access/subscribe to the services for a limited time (i.e. within 10 minutes of UTC time in token). This helps anonymous call functionality to be more secure.
 
-Application developer will be responsible for token generation. Token can be generated using the "Security Key" defined in SPiDR/KL and must be supplied to the SDK to start a call.
+Application developer will be responsible for token generation. Token can be generated using the "Security Key" defined in Ribbon WebRTC Gateway and must be supplied to the SDK to start a call.
 
 <div class="page-break"></div>
 
@@ -696,12 +696,12 @@ Application developer will be responsible for token generation. Token can be gen
 - (void) anonymousCallExample
 {
     // Following tokens should be generated by the app developer
-    // by using the security key defined in the SPiDR/KL Admin GUI
+    // by using the security key defined in the Ribbon WebRTC Gateway Admin GUI
     NSString * accountToken;
     NSString * originatorToken;
     NSString * terminatorToken;
 
-    NSString * tokenRealm;  // use the token realm defined in the SPiDR/KL Admin GUI
+    NSString * tokenRealm;  // use the token realm defined in the Ribbon WebRTC Gateway Admin GUI
 
     UIView * localVideoView;  //make an assignment
     UIView * remoteVideoView; //make an assignment
@@ -750,12 +750,12 @@ import MobileSDKAnonymous
 func anonymousCallExample() {
 
     // Following tokens should be generated by the app developer
-    // by using the security key defined in the SPiDR/KL Admin GUI
+    // by using the security key defined in the Ribbon WebRTC Gateway Admin GUI
     var accountToken;
     var originatorToken;
     var terminatorToken;
 
-    var tokenRealm;  // use the token realm defined in the SPiDR/KL Admin GUI
+    var tokenRealm;  // use the token realm defined in the Ribbon WebRTC Gateway Admin GUI
 
     var localVideoView: UIView!  //make an assignment
     var remoteVideoView: UIView! //make an assignment
@@ -860,7 +860,7 @@ func callStatusChanged(_ call: SMCallDelegate, with callState: SMCallState) {
 
 ### End calls with reason
 
-Applications can use the `endCallWithReason` API to send the end call reason to SPiDR/Kandy Link, then SPiDR/Kandy Link will send message with the reason to the remote user. The remote user gets the reason using the `callStatusChanged` API. If the call end reason string length exceeds the character limitation defined in SPiDR/Kandy Link Core, then SPiDR/Kandy Link Core will not send the excess characters.
+Applications can use the `endCallWithReason` API to send the end call reason to Ribbon WebRTC Gateway, then Ribbon WebRTC Gateway will send message with the reason to the remote user. The remote user gets the reason using the `callStatusChanged` API. If the call end reason string length exceeds the character limitation defined in Ribbon WebRTC Gateway Core, then Ribbon WebRTC Gateway Core will not send the excess characters.
 
 The `endCallWithReason` API is applicable to established calls.
 
@@ -910,7 +910,7 @@ func callStatusChanged(_ call: SMCallDelegate, with callState: SMCallState) {
 
 ### Supported call end reasons
 
-When an endCall notification is received from SPiDR/Kandy Link, the Anonymous Call SDK forwards the status code (statusCode) and status reason (reasonText) to the application layer, informing the user why the call has ended.
+When an endCall notification is received from Ribbon WebRTC Gateway, the Anonymous Call SDK forwards the status code (statusCode) and status reason (reasonText) to the application layer, informing the user why the call has ended.
 
 Anonymous Call SDK-specific status codes and reasons sent to the application layer include:
 
@@ -1559,7 +1559,7 @@ func changeVideoResolutionAndPosition() {
 
 ### Send DTMF (Dual-Tone Multi-Frequency) signals
 
-The Anonymous Call Mobile SDK supports sending Dual-Tone Multi-Frequency (DTMF) signals to an Interactive Voice Response (IVR) system via the SPiDR/Kandy Link Media Broker. This allows callers to enter passcodes on active or ringing calls. Available keys for tones include 0-9, *, #, A, B, C, and D, as outlined in RFC 4733. When remote party does't suport out-of-band DTMF, the API method will return false.
+The Anonymous Call Mobile SDK supports sending Dual-Tone Multi-Frequency (DTMF) signals to an Interactive Voice Response (IVR) system via the Ribbon WebRTC Gateway Media Broker. This allows callers to enter passcodes on active or ringing calls. Available keys for tones include 0-9, *, #, A, B, C, and D, as outlined in RFC 4733. When remote party does't suport out-of-band DTMF, the API method will return false.
 
 **Note:** This feature only provides the functionality for sending DTMF signals. It does not include the functionality for getting keypad input or for playing key press volume.
 
@@ -3240,9 +3240,9 @@ This section contains usage of all configurations that Anonymous Mobile SDK prov
     SMConfiguration * configuration =  [SMConfiguration getInstance];
 
     //set minimum Configuration values
-    //server IP value for SPiDR/Kandy Link
+    //server IP value for Ribbon WebRTC Gateway
     configuration.restServerIP = @"$SUBSCRIPTIONFQDN$";
-    //server port value for SPiDR/Kandy Link
+    //server port value for Ribbon WebRTC Gateway
     configuration.restServerPort = @"443";
     //logger implementation defined by application
     configuration.logger = nil;
@@ -3252,7 +3252,7 @@ This section contains usage of all configurations that Anonymous Mobile SDK prov
     //port used in websocket connection creation
     configuration.webSocketServerPort = @"443";
 
-    //SPiDR TURN server in WebRTC's peer connection
+    //Ribbon WebRTC Gateway TURN server in WebRTC's peer connection
     SMICEServers *iceServers = [[SMICEServers alloc] init];
     [servers addICEServer:@"$TURNSERVER1$"];
     [servers addICEServer:@"$TURNSERVER2$"];
@@ -3269,7 +3269,7 @@ This section contains usage of all configurations that Anonymous Mobile SDK prov
     configuration.iceOption = ICE_TRICKLE;
 
     //Set supported call features (ringing feedback)
-    //SPiDR server must support this feature
+    //Ribbon WebRTC Gateway server must support this feature
     configuration.ringingFeedbackOption = CLIENT;
     
     //Configure WebRTC audio sessions
@@ -3296,9 +3296,9 @@ func manageConfiguration() {
     let configuration = SMConfiguration.getInstance()
 
     //set minimum Configuration values
-    //server IP value for SPiDR/Kandy Link
+    //server IP value for Ribbon WebRTC Gateway
     configuration.restServerIP = "$SUBSCRIPTIONFQDN$"
-    //server port value for SPiDR/Kandy Link
+    //server port value for Ribbon WebRTC Gateway
     configuration.restServerPort = "443"
     //logger implementation defined by application
     configuration.logger = self
@@ -3308,7 +3308,7 @@ func manageConfiguration() {
     //port used in websocket connection creation
     configuration.webSocketServerPort  = "443"
 
-    //SPiDR TURN server in WebRTC's peer connection
+    //Ribbon WebRTC Gateway TURN server in WebRTC's peer connection
     let iceServers = SMICEServers()
     iceServers.addICEServer("$TURNSERVER1$")
     iceServers.addICEServer("$TURNSERVER2$")
@@ -3325,7 +3325,7 @@ func manageConfiguration() {
     configuration.iceOption = .trickle;
 
     //Set supported call features (ringing feedback)
-    //SPiDR server must support this feature
+    //Ribbon WebRTC Gateway server must support this feature
     configuration.ringingFeedbackOption = CLIENT;
 
     //Configure WebRTC audio sessions
