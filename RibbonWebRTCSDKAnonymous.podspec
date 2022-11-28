@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
     s.name              = 'RibbonWebRTCSDKAnonymous'
-    s.version           = '6.8.2'
+    s.version           = '6.8.1'
     s.summary           = 'Ribbon WebRTC Anonymous MobileSDK Framework'
     s.homepage          = 'https://github.com/RibbonCommunications/webrtc-anonymous-ios-sdk'
     s.license 		      = { :type => 'MIT', :file => 'mit-license.txt'}
     s.author            = { 'Name' => 'dpd-tur.MobileSDK@orioninc.com' }
     s.platform          = :ios
-    s.source            = { :git => '6.8.2', :tag => s.version}
+    s.source            = { :git => 'https://github.com/Kandy-IO/kandy-anonymous-ios-sdk.git', :tag => s.version}
     s.dependency  'RibbonWebRTC'
     s.ios.deployment_target   = '11.0'
     s.library           = ['c++','icucore','z']
