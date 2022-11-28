@@ -10,14 +10,14 @@
 
 ### CocoaPods
 
-[CocoaPods](https://cocoapods.org/pods/KandyLinkMobileSDKAnonymous) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate *Kandy Link Anonymous iOS SDK* into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org/pods/KandyLinkMobileSDKAnonymous) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate *WebRTC Anonymous iOS SDK* into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 ...
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'KandyLinkMobileSDKAnonymous', '~> 6.8.1'
+    pod 'RibbonWebRTCSDKAnonymous', '~> 6.8.1'
 end
 
 post_install do |installer|
@@ -38,7 +38,7 @@ end
 
 ### Manual
 
-Alternatively *Kandy Link Anonymous iOS SDK* can be manually integrated to your project with the [followed steps](https://ribboncommunications.github.io/webrtc-anonymous-ios-sdk/tutorials/#/?id=manual-installation-after-v5170). 
+Alternatively *WebRTC Anonymous iOS SDK* can be manually integrated to your project with the [followed steps](https://ribboncommunications.github.io/webrtc-anonymous-ios-sdk/tutorials/#/?id=manual-installation-after-v5170). 
 
 ## Documentation
 
