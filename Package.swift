@@ -11,14 +11,14 @@ let package = Package(
     products: [
         .library(
             name: "MobileSDKAnonymous",
-            targets: ["SDKWebRTC","Dependencies","MobileSDKAnonymous"]),
+            targets: ["RibbonWebRTC","Dependencies","MobileSDKAnonymous"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Kandy-IO/kandy-ios-webrtc.git", branch: "master"),
+        .package(url: "https://github.com/RibbonCommunications/RibbonWebRTC.git", branch: "master"),
     ],
     targets: [
-        .target(name: "SDKWebRTC",
-                dependencies: [.product(name: "WebRTC", package: "kandy-ios-webrtc")]),
+        .target(name: "RibbonWebRTC",
+                dependencies: [.product(name: "WebRTC", package: "RibbonWebRTC")]),
         
             .target(
                 name: "Dependencies",

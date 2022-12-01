@@ -17,7 +17,7 @@
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'RibbonWebRTCSDKAnonymous', '~> 6.8.2'
+    pod 'RibbonWebRTCSDKAnonymous', '~> 6.8.1'
 end
 
 post_install do |installer|
@@ -60,9 +60,9 @@ Compatible XCode Versions :
 
 Compatible Ribbon WebRTC Gateway Server versions :
 
-* Kandy Link 4.8.1
+* WebRTC Gateway 4.8.1
 
-* Kandy Link 4.9
+* WebRTC Gateway 4.9
 
 Tested on :
 
@@ -70,4 +70,3 @@ Tested on :
 
 ## Known Issues
 
-* Build issues on systems using Apple Silicon M1 chip.
