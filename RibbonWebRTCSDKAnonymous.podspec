@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
     s.license 		      = { :type => 'MIT', :file => 'mit-license.txt'}
     s.author            = { 'Name' => 'dpd-tur.MobileSDK@orioninc.com' }
     s.platform          = :ios
-    s.source            = { :git => 'https://github.com/RibbonCommunications/webrtc-anonymous-ios-sdk', :tag => s.version}
+    s.source            = { :git => 'https://github.com/RibbonCommunications/webrtc-anonymous-ios-sdk.git', :tag => s.version}
     s.dependency  'RibbonWebRTC'
     s.ios.deployment_target   = '11.0'
     s.library           = ['c++','icucore','z']
