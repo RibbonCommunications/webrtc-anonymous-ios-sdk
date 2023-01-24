@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name              = 'RibbonWebRTCSDKAnonymous'
-    s.version           = '6.9.0'
+    s.version           = '6.10.0'
     s.summary           = 'Ribbon WebRTC Anonymous MobileSDK Framework'
     s.homepage          = 'https://github.com/RibbonCommunications/webrtc-anonymous-ios-sdk'
     s.license 		      = { :type => 'MIT', :file => 'mit-license.txt'}
