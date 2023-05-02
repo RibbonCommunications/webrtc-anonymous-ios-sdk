@@ -1,7 +1,7 @@
 # Anonymous Call Mobile SDK User Guide for iOS
 Version Number: **$SDK_VERSION$**
 <br>
-Revision Date: **March 27, 2023**
+Revision Date: **May 2, 2023**
 
 ## Anonymous Call Mobile SDK overview
 
@@ -208,9 +208,7 @@ To see all available configurations, see [Appendix D: Detailed Configurations](#
    // add ICE Server
    SMICEServers *servers = [[SMICEServers alloc] init];
    [servers addICEServer:@"$TURNSERVER1$"];
-   [servers addICEServer:@"$TURNSERVER2$"];
    [servers addICEServer:@"$STUNSERVER1$"];
-   [servers addICEServer:@"$STUNSERVER2$"];
    [configuration setICEServers:servers];
 }
 ```
@@ -245,9 +243,7 @@ func manageConfiguration() {
     // add ICE Server
     let servers = SMICEServers()
     servers.addICEServer("$TURNSERVER1$")
-    servers.addICEServer("$TURNSERVER2$")
     servers.addICEServer("$STUNSERVER1$")
-    servers.addICEServer("$STUNSERVER2$")
     configuration.iceServers = servers
 }
 ```
@@ -465,8 +461,6 @@ The following code sample will request TURN server credentials from Ribbon WebRT
 SMICEServers *servers = [[SMICEServers alloc] init];
 [servers addICEServer:@"$TURNSERVER1$"];
 [servers addICEServer:@"$STUNSERVER1$"];
-[servers addICEServer:@"$TURNSERVER2$"];
-[servers addICEServer:@"$STUNSERVER2$"];
 [[SMConfiguration getInstance] setICEServers:servers];
 ```
 
@@ -476,8 +470,6 @@ SMICEServers *servers = [[SMICEServers alloc] init];
 var servers = SMIceServers()
 servers.addICEServer("$TURNSERVER1$")
 servers.addICEServer("$STUNSERVER1$")
-servers.addICEServer("$TURNSERVER2$")
-servers.addICEServer("$STUNSERVER2$")
 SMConfiguration.getInstance().iceServers = servers
 ```
 <!-- tabs:end -->
@@ -524,10 +516,6 @@ SMConfiguration.getInstance().iceServers?.addICEServer("$STUNSERVER1$")
 SMICEServers *servers = [[SMConfiguration getInstance] SMICEServers];
 //to use UDP transport
 [servers addICEServer:@"$TURNSERVER1$" username:@"username" password:@"password"];
-//to use TCP transport
-[servers addICEServer:@"$TURNSERVER2$" username:@"username" password:@"password"];
-//to use TLS transport
-[servers addICEServer:@"$TURNSERVER2$" username:@"username" password:@"password"];
 ```
 
 #### ** Swift Code **
@@ -536,10 +524,6 @@ SMICEServers *servers = [[SMConfiguration getInstance] SMICEServers];
 var servers = SMConfiguration.getInstance().iceServers
 //to use UDP transport
 servers.addICEServer("$TURNSERVER1$", username: "username" password: "password")
-//to use TCP transport
-servers.addICEServer("$TURNSERVER2$", username: "username" password: "password")
-//to use TLS transport
-servers.addICEServer("$TURNSERVER2$", username: "username" password: "password")
 ```
 <!-- tabs:end -->
 
@@ -3255,9 +3239,7 @@ This section contains usage of all configurations that Anonymous Mobile SDK prov
     //Ribbon WebRTC Gateway TURN server in WebRTC's peer connection
     SMICEServers *iceServers = [[SMICEServers alloc] init];
     [servers addICEServer:@"$TURNSERVER1$"];
-    [servers addICEServer:@"$TURNSERVER2$"];
     [servers addICEServer:@"$STUNSERVER1$"];
-    [servers addICEServer:@"$STUNSERVER2$"];
 
     configuration.ICEServers = iceServers;
 
@@ -3311,9 +3293,7 @@ func manageConfiguration() {
     //Ribbon WebRTC Gateway TURN server in WebRTC's peer connection
     let iceServers = SMICEServers()
     iceServers.addICEServer("$TURNSERVER1$")
-    iceServers.addICEServer("$TURNSERVER2$")
     iceServers.addICEServer("$STUNSERVER1$")
-    iceServers.addICEServer("$STUNSERVER2$")
 
     configuration.iceServers = iceServers;
 
