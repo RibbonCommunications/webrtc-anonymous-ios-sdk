@@ -1,7 +1,7 @@
 # Anonymous Call Mobile SDK User Guide for iOS
 Version Number: **$SDK_VERSION$**
 <br>
-Revision Date: **July 6, 2023**
+Revision Date: **Aug 4, 2023**
 
 ## Anonymous Call Mobile SDK overview
 
@@ -70,6 +70,15 @@ post_install do |installer|
       config.build_settings['ENABLE_BITCODE'] = 'NO'
     end
   end
+
+  installer.aggregate_targets.each do |aggregate_target|
+    aggregate_target.user_project.native_targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['LIBRARY_SEARCH_PATHS'] = ['$(SDKROOT)/usr/lib/swift', '$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)', '$(inherited)']
+       end
+    end
+    aggregate_target.user_project.save()
+  end
 end
 
 ...
@@ -115,6 +124,10 @@ Before those steps you need to download **Ribbon WebRTC Anonymous iOS SDK** fram
 
 ![alt text](images/get_started_4.png "")
 
+7. "\$(SDKROOT)/usr/lib/swift, \$(TOOLCHAIN_DIR)/usr/lib/swift/\$(PLATFORM_NAME), \$(inherited)" libraries should be added to "Library Search Paths" options under the "Build Settings".
+
+![alt text](images/get_started_8.png "") 
+
 #### Manual Installation (After v5.17.0)
 Support for XCFramework has been added to **Ribbon WebRTC Anonymous iOS SDK** with the v5.17.0 release. You can install **Ribbon WebRTC Anonymous iOS SDK** as XCFramework by following the steps below. (More information about XCFramework, see [link](https://help.apple.com/xcode/mac/11.4/#/dev6f6ac218b)).
 
@@ -143,6 +156,10 @@ First of all, you must have the **Ribbon WebRTC Anonymous iOS SDK** XCFramework 
 5. "-ObjC" flag should be added to "Other Linker Flags" options under the "Build Settings".
 
 ![alt text](images/get_started_4.png "")
+
+6. "\$(SDKROOT)/usr/lib/swift, \$(TOOLCHAIN_DIR)/usr/lib/swift/\$(PLATFORM_NAME), \$(inherited)" libraries should be added to "Library Search Paths" options under the "Build Settings".
+
+![alt text](images/get_started_8.png "") 
 
 ### Post Installation Steps
 1. Add usage descriptions for both camera and microphone access should be added to application's Info.plist file.
