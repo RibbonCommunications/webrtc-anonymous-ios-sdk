@@ -7,7 +7,7 @@
  * copied, accessed, disclosed or used in any manner, in whole or in part,
  * without GENBAND's express written authorization.
  *
- * @version: 6.19.0
+ * @version: 6.20.0
  *
  */
 
@@ -16,7 +16,6 @@
 
 @class SMMobileError;
 @class SMUriAddress;
-
 @protocol SMCallApplicationDelegate;
 
 /**
