@@ -17,7 +17,7 @@ CocoaPods is a dependency manager for Cocoa projects. For usage and installation
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'RibbonWebRTCSDKAnonymous', '~> 6.21.1'
+    pod 'RibbonWebRTCSDKAnonymous', '~> 6.22.0'
 end
 
 post_install do |installer|
@@ -55,7 +55,7 @@ The information about tutorials and documents can be found in the links below
 
 * Documents: [API Docs](https://ribboncommunications.github.io/webrtc-anonymous-ios-sdk/docs)
 
-* Tutorials: Choose your configuration ( [BLUE-LAB](https://ribboncommunications.github.io/webrtc-ios-sdk/tutorials/?SUBSCRIPTIONFQDN=blue.rbbn.com&WEBSOCKETFQDN=blue.rbbn.com&ICESERVER1=turn-blue.rbbn.com) )
+* Tutorials: Choose your configuration ( [BLUE-LAB](https://ribboncommunications.github.io/webrtc-anonymous-ios-sdk/tutorials/?SUBSCRIPTIONFQDN=blue.rbbn.com&WEBSOCKETFQDN=blue.rbbn.com&ICESERVER1=turn-blue.rbbn.com) )
 
 ## Compatibility
 
