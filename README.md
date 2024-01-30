@@ -1,9 +1,9 @@
 # Ribbon WebRTC Anonymous iOS SDK
 
 <p>
-    <img alt="Cocoapods platforms" src="https://img.shields.io/cocoapods/p/KandyLinkMobileSDKAnonymous">
+    <img alt="Cocoapods platforms" src="https://img.shields.io/cocoapods/p/RibbonWebRTCSDK">
     <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/RibbonCommunications/webrtc-anonymous-ios-sdk">
-    <img alt="Cocoapods" src="https://img.shields.io/cocoapods/v/KandyLinkMobileSDKAnonymous">
+    <img alt="Cocoapods" src="https://img.shields.io/cocoapods/v/RibbonWebRTCSDK">
 </p>
 
 ## Install
