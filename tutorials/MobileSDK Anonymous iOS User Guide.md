@@ -1,7 +1,7 @@
 # Anonymous Call Mobile SDK User Guide for iOS
 Version Number: **$SDK_VERSION$**
 <br>
-Revision Date: **Apr 30, 2024**
+Revision Date: **May 23, 2024**
 
 ## Anonymous Call Mobile SDK overview
 
