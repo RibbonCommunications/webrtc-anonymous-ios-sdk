@@ -1,9 +1,9 @@
 # Ribbon WebRTC Anonymous iOS SDK
 
 <p>
-    <img alt="Cocoapods platforms" src="https://img.shields.io/cocoapods/p/KandyLinkMobileSDKAnonymous">
+    <img alt="Cocoapods platforms" src="https://img.shields.io/cocoapods/p/RibbonWebRTCSDKAnonymous">
     <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/RibbonCommunications/webrtc-anonymous-ios-sdk">
-    <img alt="Cocoapods" src="https://img.shields.io/cocoapods/v/KandyLinkMobileSDKAnonymous">
+    <img alt="Cocoapods" src="https://img.shields.io/cocoapods/v/RibbonWebRTCSDKAnonymous">
 </p>
 
 ## Install
@@ -17,7 +17,7 @@ CocoaPods is a dependency manager for Cocoa projects. For usage and installation
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'RibbonWebRTCSDKAnonymous', '~> 6.25.2'
+    pod 'RibbonWebRTCSDKAnonymous', '~> 6.26.0'
 end
 
 post_install do |installer|
