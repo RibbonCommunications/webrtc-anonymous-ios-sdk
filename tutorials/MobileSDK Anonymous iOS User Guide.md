@@ -1,7 +1,7 @@
 # Anonymous Call Mobile SDK User Guide for iOS
 Version Number: **$SDK_VERSION$**
 <br>
-Revision Date: **Aug 29, 2025**
+Revision Date: **Oct 02, 2025**
 
 ## Anonymous Call Mobile SDK overview
 
@@ -16,7 +16,7 @@ The Anonymous Call Mobile SDK has the following characteristics:
 
 See [Appendix A: High-level Anonymous Call Mobile SDK structure](#appendix-a-high-level-anonymous-call-mobile-sdk-structure) for a high-level view of the Anonymous Call Mobile SDK and its sub-modules.
 
-The Anonymous Call Mobile SDK for iOS is compatible with iOS 13.x-17.x and has been tested on iPhone 6S, 7, 7+, 8, X, 11, 11 Pro, iPad mini, and iPad Air. The SDK supports IPv6 for iOS.
+The Anonymous Call Mobile SDK for iOS is compatible with iOS 13+. The SDK supports IPv6 for iOS.
 
 ### What's in this document?
 
