@@ -7,8 +7,8 @@ Pod::Spec.new do |s|
     s.author            = { 'Name' => 'dpd-tur.MobileSDK@orioninc.com' }
     s.platform          = :ios
     s.source            = { :git => 'https://github.com/RibbonCommunications/webrtc-anonymous-ios-sdk.git', :tag => s.version}
-    s.dependency  'RibbonWebRTC' , '~> 0.118.0'
-    s.ios.deployment_target   = '13.0'
+    s.dependency  'RibbonWebRTC' , '~> 0.142.0'
+    s.ios.deployment_target   = '14.0'
     s.library           = ['c++','icucore','z']
     s.ios.frameworks    = ['AVFoundation','SystemConfiguration','GLKit','VideoToolbox','AudioToolbox','PushKit']
     s.vendored_frameworks = ['MobileSDKAnonymous.xcframework']
